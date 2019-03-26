@@ -13,23 +13,25 @@
 			<input type="text" class="form-control" id="todoListCreator" aria-describedby="emailHelp" placeholder="Get Eggs">
 			<button onclick="addToList()" type="submit" class="btn btn-primary">Submit</button>
 		</div>
-		<div id="list">
+		<div>
+			<ul id="list">
+				
+			</ul>
 			
 		</div>
 		
 		<script>
-			let todoArray = [];
+			let todoArray = ["get eggs","work out"];
 			let addToList = () => {
-		        todoArray.push(document.queryselector('#todoCreator'))
+		        let selection = "<li>" + document.getElementById("todoListCreator").value + "</li>";
+		        todoArray.push(selection);
+		        document.getElementById("list").innerHTML += selection;
 			};
-			let printThis = "";
-			let printer = () => {
-				for(let i = 0; i<todoArray.length; i++;){
-					printThis += "<br>"+todoArray[i];
-				}
-				return printThis;
-			}
-			document.getElementById("list").innerHTML = printer();
+
+			for (var i = 0; i < todoArray.length; i++) {
+			       itemList = "<li>" + todoArray[i] + "</li>";
+			       document.getElementById("list").innerHTML += itemList;
+			  }
 		</script>
 	</body>
 </html>
