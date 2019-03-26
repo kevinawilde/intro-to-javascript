@@ -5,30 +5,41 @@
 		<title></title>
 	</head>
 	<body>
-		<section class="container-fluid">
+		<section class="jumbotron">
+			<div class="flex-row justify-content-center">
+				<h1>Todo List</h1>	
+			</div>
 			
-			<div class="form-group">
-				<label for="todoListCreator">Add Todo Here</label>
-				<input type="text" class="form-control" id="todoListCreator" aria-describedyb="emailHelp" placeholder="Get Eggs">
-				<button onclick="addToList()" type="submit" class="btn btn-primary">Submit</button>
-			</div>
-			<div id="list" class="row">
-				
-				
-			</div>
+			
 		</section>
+		<section class="container-fluid">
 		
-		<script>
-			let todoArray = ["get eggs","work out"];
-			let addToList = () => {
-			let selection = "<div class='card'>" + document.getElementById("todoListCreator").value +"</div>";
-			todoArray.push(selection);
-			document.getElementById("list").innerHTML += selection;
-				};
-				for (var i = 0; i < todoArray.length; i++) {
-				itemList = "<div class='card'>" + todoArray[i] + "</div>";
-				document.getElementById("list").innerHTML += itemList;
-				}
-			</script>
-		</body>
-	</html>
+			<div class="flex-row">
+				<div class="form-group">
+					<label for="todoListCreator">Add Todo Here</label>
+					<input type="text" class="form-control" id="todoListCreator" aria-describedyb="emailHelp" placeholder="Get Eggs">
+					<button onclick="addToList()" type="submit" class="btn btn-primary">Submit</button>
+				</div>
+				
+			</div>
+			
+
+		</section>
+		<section class="container-fluid flex-row justify-content-center" id="list">
+			
+		</section>
+	
+	<script>
+		let todoArray = ["get eggs","work out"];
+		let addToList = () => {
+		let selection = "<div class='card col'>" + document.getElementById("todoListCreator").value +"</div>";
+		todoArray.push(selection);
+		document.getElementById("list").innerHTML += selection;
+			};
+			for (var i = 0; i < todoArray.length; i++) {
+			itemList = "<div class='card col'>" + todoArray[i] + "</div>";
+			document.getElementById("list").innerHTML += itemList;
+			}
+	</script>
+</body>
+</html>
